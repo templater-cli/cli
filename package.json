@@ -1,0 +1,31 @@
+{
+  "name": "@templater/cli",
+  "version": "0.0.0",
+  "main": "build/index.js",
+  "bin": {
+    "templater": "build/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/templater-cli/cli.git",
+  "author": "Luiz Felipe Gonçalves <https://luizfelipe.dev>",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node cli",
+    "build": "rimraf build && tsc",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^12.0.10",
+    "eslint": "^5.16.0",
+    "eslint-config-lffg": "^1.7.0",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  }
+}

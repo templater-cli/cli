@@ -1,0 +1,16 @@
+node_modules
+__old__*
+__old__
+.next
+build
+dist
+tmp
+
+
+**/node_modules
+**/__old__*
+**/__old__
+**/.next
+**/build
+**/dist
+**/tmp
