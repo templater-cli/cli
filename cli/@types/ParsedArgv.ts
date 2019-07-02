@@ -1,5 +1,5 @@
 export interface ArgvData {
-  repo?: {
+  repo: {
     name: string;
     url: string;
   };
