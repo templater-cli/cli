@@ -42,12 +42,6 @@
     "noFallthroughCasesInSwitch": true,
 
     //
-    // Path options:
-    //
-    "baseUrl": "./",
-    "paths": {},
-
-    //
     // Extra options:
     //
     "allowSyntheticDefaultImports": true,
