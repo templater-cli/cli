@@ -18,7 +18,7 @@ withErrorHandler(() => {
   const [, , ...args] = process.argv;
   const parsedArgv = parseArgv(...args);
 
-  if ('isHelp' in parsedArgv) {
+  if (parsedArgv === '--help') {
     showHelp();
   } else {
     start(parsedArgv);
