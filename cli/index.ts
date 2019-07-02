@@ -1,5 +1,10 @@
 #! /usr/bin/env node
 
+import parseArgv from './lib/argv-parser';
+import start from './start';
+import showHelp from './utils/show-help';
+import withErrorHandler from './utils/with-error-handler';
+
 /**
  * Templater CLI
  *
@@ -9,6 +14,13 @@
  * @see `steps.md`
  */
 
-const [, , ...args] = process.argv;
+withErrorHandler(() => {
+  const [, , ...args] = process.argv;
+  const parsedArgv = parseArgv(...args);
 
-console.log(args);
+  if ('isHelp' in parsedArgv) {
+    showHelp();
+  } else {
+    start(parsedArgv);
+  }
+});
