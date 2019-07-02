@@ -1,19 +1,8 @@
+import { ArgvDataOrHelp } from '../../@types/ParsedArgv';
 import UserError from '../../utils/UserError';
 import defaultCliOptions from './options';
 
-type ArgvData =
-  | {
-      repo?: {
-        name: string;
-        url: string;
-      };
-
-      // Just `option.symbolOption`.
-      options: string[];
-    }
-  | { isHelp: true };
-
-export default function parseArgv(...args: string[]): ArgvData {
+export default function parseArgv(...args: string[]): ArgvDataOrHelp {
   const [rawUser] = args;
   const options: string[] = [];
 
@@ -31,7 +20,7 @@ export default function parseArgv(...args: string[]): ArgvData {
 
   // If the `--help` option was passed, we should not continue.
   if (options.includes('--help')) {
-    return { isHelp: true };
+    return '--help';
   }
 
   const [username, repository] = (rawUser.includes('/')
